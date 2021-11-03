@@ -15,7 +15,7 @@ class ProductManagerTest {
     private Book second = new Book(11112, "Синяя", 100, "Папа Карло");
     private Smartphone third = new Smartphone(3333, "Honor", 12000, "Huawei");
     private Smartphone fourth = new Smartphone(4444, "Samsung", 12000, "Samsung");
-    private Book fifth = new Book(55555, "Букварь", 190, "Папа Карло");
+    private Book fifth = new Book(5512555, "Букварь", 190, "Папа Карло");
 
 
     @BeforeEach
@@ -26,7 +26,13 @@ class ProductManagerTest {
         manager.add(fourth);
         manager.add(fifth);
     }
+    @Test
+    public void shouldSearchByNameProduct() {
+        Product[] actual = manager.searchBy("стол");
+        Product[] expected = {};
+        assertArrayEquals(actual, expected);
 
+    }
     @Test
     public void shouldSearchByNameAndMadeBy() {
         Product[] actual = manager.searchBy("Samsung");
